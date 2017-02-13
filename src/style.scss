@@ -1,3 +1,255 @@
+// Colors
+$arrow: rgb(173,147,126);
+$arrow-shadow: rgb(162,134,113);
+$fur: rgb(253,254,217);
+$fur-shadow: rgb(240,227,185);
+$horn: rgb(142,129,113);
+$horn-shadow: rgb(128,115,99);
+$nose: rgb(78,82,92);
+$mid-face: rgb(91,79,60);
+$bg: rgb(154,193,216);
+$nose: rgb(74, 60, 50);
+$cheeks: rgb(140,125,111);
+
+// z-indexes
+$z-arrow: 1200;
+$z-horn: 1150;
+$z-hair-fuzz: 1100;
+$z-head-shape: 1000;
+$z-eyes: 900;
+$z-nostrils: 800;
+$z-nose: 700;
+$z-cheeks: 600;
+$z-mid-face: 500;
+$z-lower-face: 400;
+$z-tongue: 300;
+$z-upper-jaw: 200;
+$z-chin: 100;
+$z-lower-jaw: 0;
+
 body {
-  background: yellow;
+  background: $bg;
+}
+
+#appa {
+  margin: 80px auto 20px;
+  width: 1000px;
+  display: block;
+  height: 600px;
+  position: relative;
+
+  > * {
+    position: absolute;
+    max-width: 500px;
+  }
+}
+
+svg path {
+  fill: inherit !important;
+}
+
+#arrow {
+  fill: $arrow;
+  top: 0;
+  left: 125px;
+  width: 260px;
+  z-index: $z-arrow;
+}
+
+#hair-fuzz {
+  fill: $fur;
+  top: 180px;
+  z-index: $z-hair-fuzz;
+}
+
+#head-shape {
+  fill: $fur;
+  z-index: $z-head-shape;
+}
+
+#cheeks {
+  fill: $cheeks;
+  z-index: $z-cheeks;
+  top: 320px;
+  left: 40px;
+  width: 430px;
+}
+
+#horn-left,
+#horn-right {
+  fill: $horn;
+  top: 30px;
+  width: 40px;
+  z-index: $z-horn;
+  
+  path:last-child {
+    fill: $fur !important;
+  }
+}
+
+#horn-left {
+  left: 20px;
+}
+
+#horn-right {
+  left: 440px;
+}
+
+#eye-left,
+#eye-right {
+  z-index: $z-eyes;
+  width: 50px;
+}
+
+#eye-left {
+  top: 275px;
+  left: 110px;
+}
+
+#eye-right {
+  left: 330px;
+  top: 276px;
+}
+
+#mid-face {
+  fill: $mid-face;
+  top: 230px;
+  width: 370px;
+  left: 65px;
+  z-index: $z-mid-face;
+}
+
+#lower-face {
+  fill: $fur;
+  top: 140px;
+  z-index: $z-lower-face;
+  width: 420px;
+  left: 40px;
+}
+
+#nose {
+  z-index: $z-nose;
+  width: 190px;
+  top: 330px;
+  left: 155px;
+  fill: $nose;
+}
+
+#nostril-left,
+#nostril-right {
+  fill: gray;
+  z-index: $z-nostrils;
+  width: 20px;
+}
+
+#nostril-left {
+  left: 190px;
+  top: 370px;
+}
+
+#nostril-right {
+  left: 285px;
+  top: 370px;
+}
+
+#tongue {
+  width: 40px;
+  fill: pink;
+  z-index: $z-tongue;
+  left: 160px;
+  top: 400px;
+  
+  path:last-child {
+    fill: #000000 !important;
+  }
+}
+
+#chin {
+  fill: $fur;
+  z-index: $z-chin;
+  width: 300px;
+  left: 100px;
+  top: 330px;
+}
+
+#lower-jaw,
+#upper-jaw {
+  fill: white;
+  
+  svg {
+    position: relative;
+  }
+}
+
+.gums {
+  position: absolute;
+  height: 20px;
+  background: pink;
+  width: 100%;
+}
+
+#lower-jaw {
+  top: 370px;
+  left: 125px;
+  width: 250px;
+  
+  svg {
+    z-index: $z-lower-jaw;
+  }
+  
+  .gums {
+    bottom: 0;
+    z-index: $z-lower-jaw - 1;
+  }
+}
+
+#upper-jaw {
+  top: 330px;
+  width: 230px;
+  left: 130px;
+  
+  svg {
+    z-index: $z-upper-jaw;
+  }
+  
+  .gums {
+    top: 0;
+    z-index: $z-upper-jaw - 1;
+  }
+}
+
+#lower-jaw,
+#upper-jaw,
+#chin {
+  transition: top .4s linear;
+}
+
+#tongue {
+  transition: top .2s linear;
+  transition-delay: .6s;
+}
+
+#appa.mouth-open {
+  #tongue {
+    transition: top .2s linear;
+    top: 370px;
+  }
+  
+  #lower-jaw,
+  #upper-jaw,
+  #chin {
+    transition-delay: .4s;
+  }
+  
+  #lower-jaw {
+    top: 440px;
+  }
+  
+  #upper-jaw {
+    top: 400px;
+  }
+  
+  #chin {
+    top: 400px;
+  }
 }
