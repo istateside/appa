@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const util = require('gulp-util');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const haml = require('gulp-haml');
+const haml = require('gulp-ruby-haml');
 const livereload = require('gulp-livereload');
 const babel = require('gulp-babel');
 
@@ -19,11 +19,8 @@ gulp.task('sass', () => {
     .pipe(livereload());
 });
 
-gulp.task('haml', () => {
-  return gulp.src('./src/index.haml')
-    .pipe(haml())
-    .on('error', util.log)
-    .pipe(gulp.dest('./build'))
+gulp.task('html', () => {
+  return gulp.src('./src/index.html').pipe(gulp.dest('./build'));
 });
 
 gulp.task('babel', () => {
@@ -35,8 +32,8 @@ gulp.task('babel', () => {
 gulp.task('watch', function() {
   livereload.listen({ reloadPage: 'build/index.html' });
   gulp.watch('./src/*.scss', ['sass']);
-  gulp.watch('./src/*.haml', ['haml']);
+  gulp.watch('./src/*.html', ['html']);
   gulp.watch('./src/*.js', ['babel']);
 });
 
-gulp.task('default', ['watch', 'sass', 'haml', 'babel']);
+gulp.task('default', ['watch', 'sass', 'html', 'babel']);
