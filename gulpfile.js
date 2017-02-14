@@ -26,7 +26,10 @@ gulp.task('html', () => {
 gulp.task('babel', () => {
   gulp.src('src/script.js')
       .pipe(babel({ presets: ['es2015'] }))
-      .pipe(gulp.dest('build'));
+      .on('error', function(err) {
+        console.error(err);
+        this.emit('end');
+      }).pipe(gulp.dest('build'));
 });
 
 gulp.task('watch', function() {

@@ -29,14 +29,46 @@ $z-lower-jaw: 0;
 
 body {
   background: $bg;
+  font-family: "Open Sans";
+}
+
+#appa-wrapper {
+  margin: 40px 60px 20px;
+}
+
+.text-wrapper {
+  background: $arrow-shadow;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid $arrow-shadow;
+  border-radius: 8px;
+  max-width: 700px;
+  width: 80%;
+  max-height: 250px;
+
+  .inner-wrap {
+    background: $fur-shadow;
+    border-radius: 8px;
+    margin: 10px;
+  }
+
+  p {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 #appa {
-  margin: 80px auto 20px;
-  width: 1000px;
   display: block;
-  height: 600px;
   position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 500px;
 
   > * {
     position: absolute;
@@ -84,15 +116,18 @@ svg path {
 
   path:last-child {
     fill: $fur !important;
+    stroke: none !important;
   }
 }
 
 #horn-left {
   left: 20px;
+  transform-origin: bottom right;
 }
 
 #horn-right {
   left: 440px;
+  transform-origin: bottom left;
 }
 
 #eye-left,
@@ -127,12 +162,20 @@ svg path {
   left: 40px;
 }
 
-#nose {
+#nose-wrapper {
   z-index: $z-nose;
   width: 190px;
   top: 330px;
   left: 155px;
+
+  * {
+    position: absolute;
+  }
+}
+
+#nose {
   fill: $nose;
+  z-index: $z-nose + 1;
 }
 
 #nostril-left,
@@ -140,16 +183,17 @@ svg path {
   fill: gray;
   z-index: $z-nostrils;
   width: 20px;
+  z-index: $z-nose + 2;
 }
 
 #nostril-left {
-  left: 190px;
-  top: 370px;
+  left: 30px;
+  top: 35px;
 }
 
 #nostril-right {
-  left: 285px;
-  top: 370px;
+  right: 30px;
+  top: 35px;
 }
 
 #tongue {
@@ -252,4 +296,14 @@ svg path {
   #chin {
     top: 400px;
   }
+}
+
+button {
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
+  appearance: none;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
 }
