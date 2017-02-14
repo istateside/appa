@@ -43,49 +43,6 @@ const Appa = {
 
   messages: {
     intro: [
-      'hi jess! appa here.',
-      `kevin told me you were a big fan of the fact that i'm a giant soft animal`,
-      `and i'm pretty sure we have a lot in common.`,
-      `my favorite things to do are eat and nap`,
-      `but both of us have traveled around the world`,
-      `mostly to find new places to sleep and eat.`,
-      `kevin asked me to come down and help him out`,
-      `by reading you this message for valentine's day`,
-      `ahem`,
-      `deeeeear jess:`,
-      `since last valentine's day, so much has happened!`,
-      `there's a cool baby for us to hang out with!`,
-      `you started a new job helping old ladies make friends and young ladies become badasses!`,
-      `we went all the way to nashville together!`,
-      `we've gone out to dinner and made dinner together a bunch of times`,
-      `(including tonight!)`,
-      `i'm constantly grateful for having you in my life`,
-      `and for you always being supportive and patient with me`,
-      `and even if i don't always show it as much as i should`,
-      `i love you`,
-      `and i wouldn't want to go through all of these adventures without you.`,
-      `now we're looking at apartments together!`,
-      `i can tell that next year is going to be our best year yet`,
-      `happy valentine's day, jess`,
-      `love, kevin`,
-      ``,
-      ``,
-      ``,
-      `(aaaaand appa)`,
-      ``,
-      `whoa that kevin guy sounds really nice!`,
-      `and handsome.`,
-      `but hey!`,
-      `if you guys have some extra space in your new apartment`,
-      `maybe i could come hang out?`,
-      `or maybe i could just come with you guys?`,
-      `i don't need a lot-`,
-      `just a big empty space and a lot of straw to munch on`,
-      `i'd be ready to move in whenever you guys are!`,
-      `in fact- i'm all packed and ready to go already.`,
-      `i like dark spaces, where i can fall asleep and no one will bug me`,
-      `actually, i'm closer than you think, right now`,
-      `come find me!`
     ]
   },
 
@@ -375,7 +332,7 @@ const Appa = {
   }
 }
 
-$button.on('click', Appa.init.bind(Appa));
+//$button.on('click', Appa.init.bind(Appa));
 
 Appa.startIdle();
 
