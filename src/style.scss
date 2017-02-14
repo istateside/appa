@@ -34,6 +34,12 @@ body {
 
 #appa-wrapper {
   margin: 40px 60px 20px;
+  transition: opacity 2s ease-in;
+  opacity: 1;
+
+  &.hidden {
+    opacity: 0;
+  }
 }
 
 .text-wrapper {

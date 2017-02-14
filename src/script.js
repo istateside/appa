@@ -378,3 +378,7 @@ const Appa = {
 $button.on('click', Appa.init.bind(Appa));
 
 Appa.startIdle();
+
+setTimeout(function() {
+  $('#appa-wrapper').removeClass('hidden');
+}, 500);
