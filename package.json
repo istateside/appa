@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A valentine's day message for Jess!",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "connect": "^3.5.1",
+    "serve-static": "^1.11.2"
+  },
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-preset-es2015": "^6.22.0",
@@ -11,7 +14,8 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
     "gulp-livereload": "^3.8.1",
-    "gulp-ruby-haml": "0.0.9"
+    "gulp-ruby-haml": "0.0.9",
+    "gulp-sass": "^3.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
