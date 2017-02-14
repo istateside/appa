@@ -11,7 +11,7 @@ $bg: rgb(154,193,216);
 $nose: rgb(74, 60, 50);
 $cheeks: rgb(140,125,111);
 
-// z-indexes
+// Z-Indexes
 $z-arrow: 1200;
 $z-horn: 1150;
 $z-hair-fuzz: 1100;
@@ -81,7 +81,7 @@ svg path {
   top: 30px;
   width: 40px;
   z-index: $z-horn;
-  
+
   path:last-child {
     fill: $fur !important;
   }
@@ -158,7 +158,7 @@ svg path {
   z-index: $z-tongue;
   left: 160px;
   top: 400px;
-  
+
   path:last-child {
     fill: #000000 !important;
   }
@@ -175,7 +175,7 @@ svg path {
 #lower-jaw,
 #upper-jaw {
   fill: white;
-  
+
   svg {
     position: relative;
   }
@@ -192,11 +192,11 @@ svg path {
   top: 370px;
   left: 125px;
   width: 250px;
-  
+
   svg {
     z-index: $z-lower-jaw;
   }
-  
+
   .gums {
     bottom: 0;
     z-index: $z-lower-jaw - 1;
@@ -207,11 +207,11 @@ svg path {
   top: 330px;
   width: 230px;
   left: 130px;
-  
+
   svg {
     z-index: $z-upper-jaw;
   }
-  
+
   .gums {
     top: 0;
     z-index: $z-upper-jaw - 1;
@@ -234,21 +234,21 @@ svg path {
     transition: top .2s linear;
     top: 370px;
   }
-  
+
   #lower-jaw,
   #upper-jaw,
   #chin {
     transition-delay: .4s;
   }
-  
+
   #lower-jaw {
     top: 440px;
   }
-  
+
   #upper-jaw {
     top: 400px;
   }
-  
+
   #chin {
     top: 400px;
   }
